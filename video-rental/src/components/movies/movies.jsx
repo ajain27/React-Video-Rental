@@ -12,7 +12,6 @@ class Movies extends Component {
   }
 
   handleDelete = movie => {
-    console.log('Deleted', movie)
     const movies = this.state.movies.filter(m => m._id !== movie._id)
     this.setState({ movies })
   }
@@ -32,13 +31,13 @@ class Movies extends Component {
 
   render () {
     const { length: movieLength } = this.state.movies
-    const { pageSize, currentPage, movies } = this.state
+    const { pageSize, currentPage, movies: allMovies } = this.state
 
     if (movieLength === 0) {
       return <p>There are no movies to show</p>
     }
 
-    const paginatedMovies = paginate(movies, currentPage, pageSize)
+    const movies = paginate(allMovies, currentPage, pageSize)
 
     return (
       <div>
@@ -55,7 +54,7 @@ class Movies extends Component {
             </tr>
           </thead>
           <tbody>
-            {paginatedMovies.map(movie => (
+            {movies.map(movie => (
               <tr key={movie._id}>
                 <td>{movie.title}</td>
                 <td>{movie.genre.name}</td>
