@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
 
-class Like extends Component {
-  state = {}
-  render () {
-    return <div />
-  }
+const Like = props => {
+  let classes = 'fa fa-heart'
+  if (!props.liked) classes += '-o'
+  return (
+    <i
+      className={classes}
+      onClick={props.onToggle}
+      style={{ cursor: 'pointer' }}
+    />
+  )
 }
 
 export default Like
