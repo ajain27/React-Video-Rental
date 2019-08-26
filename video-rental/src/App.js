@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './App.css'
-import Movies from './components/movies'
+import Movies from './components/movies/movies'
 
 class App extends Component {
   state = {}

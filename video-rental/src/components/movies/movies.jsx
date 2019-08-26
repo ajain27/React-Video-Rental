@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { getMovies } from '../services/fakeMovieService'
+import { getMovies } from '../../services/fakeMovieService'
+import 'font-awesome/css/font-awesome.css'
 
 class Movies extends Component {
   state = {
