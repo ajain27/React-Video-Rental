@@ -22,7 +22,6 @@ class Movies extends Component {
     movies[index] = { ...movies[index] }
     movies[index].liked = !movies[index].liked
     this.setState({ movies })
-    console.log('Like clicked', movie)
   }
 
   handlePageChange = page => {
